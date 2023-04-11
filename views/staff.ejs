@@ -1,0 +1,67 @@
+<%- include("partials/header") -%> <%- include("partials/navbar") -%>
+
+<div class="span9">
+	<div class="module">
+		<div class="module-head">
+			<h3>
+				<%= title %> -
+				<a href="/<%= title %>/Create">Create New</a>
+			</h3>
+		</div>
+		<div class="module-body table">
+			<div
+				id="DataTables_Table_0_wrapper"
+				class="dataTables_wrapper"
+				role="grid"
+			>
+				<div
+					id="DataTables_Table_0_length"
+					class="dataTables_length"
+				></div>
+				<div
+					class="dataTables_filter"
+					id="DataTables_Table_0_filter"
+				></div>
+				<table
+					cellpadding="0"
+					cellspacing="0"
+					border="0"
+					class="datatable-1 table table-bordered table-striped display dataTable"
+					width="100%"
+					id="DataTables_Table_0"
+					aria-describedby="DataTables_Table_0_info"
+				>
+					<thead>
+						<tr role="row">
+                            <th>ID</th>
+							<th>Full Name</th>
+							<th>City</th>
+							<th>Phone_Number</th>
+                            <th>SSN</th>
+                            <th>Pay Rate</th>
+                            <th>Vacation_Days</th>
+							<th>Shareholder</th>
+						</tr>
+					</thead>
+
+					<tbody>
+                        <% for(let i = 0; i < data.length; i++){ %>
+                            <tr>
+                                <td><%= data[i].Employee_ID %></td>
+                                <td><%= data[i].First_Name + ' ' +  data[i].Last_Name %></td>
+                                <td><%= data[i].City %></td>
+                                <td><%= data[i].Phone_Number %></td>
+                                <td><%= data[i].Social_Security_Number %></td>
+                                <td><%= data[i].Pay_Rate %></td>
+                                <td><%= data[i].Vacation_Days %></td>
+                                <td><%= data[i].Shareholder_Status %></td>
+                            </tr>
+                        <% } %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%- include("partials/footer") -%>
